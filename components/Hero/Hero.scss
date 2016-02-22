@@ -1,0 +1,33 @@
+.Hero {
+  height: 100vh;
+  background: url(../../static/background.jpeg) no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes underlineExpansion {
+  0% {
+    width: 0px;
+ }
+ 100% {
+   width: 100%;
+  }
+}
+
+.Hero__title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 64px;
+  color: #FFF;
+
+  &:after {
+    content: '';
+  	display: block;
+  	margin: auto;
+  	height: 3px;
+  	width: 0px;
+  	background: white;
+  	animation: underlineExpansion 1 2s forwards;
+  }
+}
