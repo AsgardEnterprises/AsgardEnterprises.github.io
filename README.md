@@ -2,7 +2,7 @@
 
 This repository contains the code for displaying, developing and building the static splash page for Asgard.
 
-You can check it out at [asgard.tech](asgard.tech)!
+You can check it out at [asgard.tech](http://asgard.tech)!
 
 
 ## Developing the product
