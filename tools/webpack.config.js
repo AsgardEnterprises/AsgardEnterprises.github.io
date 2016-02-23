@@ -1,9 +1,3 @@
-/**
- * React Static Boilerplate
- * https://github.com/koistya/react-static-boilerplate
- * Copyright (c) Konstantin Tarkus (@koistya) | MIT license
- */
-
 import path from 'path';
 import webpack from 'webpack';
 import merge from 'lodash.merge';
@@ -79,6 +73,10 @@ const config = {
         test: /\.(eot|ttf|wav|mp3)$/,
         loader: 'file-loader',
       },
+      {
+        test: /\.scss$/,
+        loaders: ['isomorphic-style-loader', 'css-loader', 'postcss-loader'],
+      },
     ],
   },
   postcss: function plugins(bundler) {
@@ -143,10 +141,6 @@ const appConfig = merge({}, config, {
         },
       }) : JS_LOADER,
       ...config.module.loaders,
-      {
-        test: /\.scss$/,
-        loaders: ['style-loader', 'css-loader', 'postcss-loader'],
-      },
     ],
   },
 });
@@ -175,10 +169,6 @@ const pagesConfig = merge({}, config, {
     loaders: [
       JS_LOADER,
       ...config.module.loaders,
-      {
-        test: /\.scss$/,
-        loaders: ['css-loader', 'postcss-loader'],
-      },
     ],
   },
 });

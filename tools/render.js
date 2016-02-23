@@ -1,9 +1,3 @@
-/**
- * React Static Boilerplate
- * https://github.com/koistya/react-static-boilerplate
- * Copyright (c) Konstantin Tarkus (@koistya) | MIT license
- */
-
 import glob from 'glob';
 import { join, dirname } from 'path';
 import React from 'react';
@@ -35,9 +29,10 @@ function getPages() {
   });
 }
 
-async function renderPage(page, component) {
+async function renderPage(page, component, css) {
   const data = {
     body: ReactDOM.renderToString(component),
+    css: css.join(' '),
   };
   const file = join(__dirname, '../build', page.file.substr(0, page.file.lastIndexOf('.')) + '.html');
   const html = '<!doctype html>\n' + ReactDOM.renderToStaticMarkup(<Html debug={DEBUG} {...data} />);

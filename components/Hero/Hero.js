@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import './Hero.scss';
+import withStyles from '../withStyles.js';
+import style from './Hero.scss';
 
 class Hero extends Component {
   render() {
@@ -13,4 +14,4 @@ class Hero extends Component {
   }
 }
 
-export default Hero;
+export default withStyles(Hero, style);
